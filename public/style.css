@@ -1,0 +1,132 @@
+:root {
+    --primary-color : #ffffff;
+    --secondary-color : #f7f6ee;
+    --font-color-primary: #302f32;
+    --font-color-secondary: #666666;
+    --font-size-reg: 15px;
+    --font-size-md: 22px;
+    --font-size-sm: 10px;
+    --font-size-xxl: 40px;
+}
+
+@font-face {
+    font-family: "MainFont";
+    src: url("./fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left-nav-div,#mid-nav-div,#right-nav-div{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+#mid-nav-div{
+    gap: 30px;
+}
+
+#content-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+#footer{
+
+    /* no footer yet */
+}
+
+
+
+
+
+/* font styling */
+
+.label{
+    font-size: var(--font-size-md);
+    color: var(--font-color-primary);
+    font-family: "MainFont";
+    font-weight: 900;
+}
+.label-header{
+    font-size: var(--font-size-xxl);
+    color: var(--font-color-primary);
+    font-family: "MainFont";
+    font-weight: 700;
+}
+.description-label{
+    font-size: var(--font-size-sm);
+    color: var(--font-color-secondary);
+    font-family: "MainFont";
+}
+.nav-label{
+    font-size: var(--font-size-reg);
+    color: var(--font-color-secondary);
+    font-family: "MainFont";
+}
+.nav-label.active{
+    color: var(--font-color-primary);
+}
+.btn-label{
+    font-size: var(--font-size-reg);
+    color: var(--font-color-primary);
+    font-family: "MainFont";
+    font-weight: 600;
+}
+
+/* button styling */
+
+.btn{
+    width: 130px;
+    height: 30px;
+    border: 0.5px solid var(--font-color-secondary);
+    border-radius: 10px;
+    padding: 0px 5px;
+    background-color: var(--primary-color);
+}
+.big-btn{
+
+}
+.round-btn{
+
+}
+
+
+.title-div{
+    width: 500px;
+}
+.trial-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-one{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+}

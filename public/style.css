@@ -48,6 +48,7 @@ html,body{
 }
 #mid-nav-div{
     gap: 30px;
+    margin: 0px 50px;
 }
 
 #content-div{
@@ -63,10 +64,8 @@ html,body{
 }
 
 
-
-
-
 /* font styling */
+
 
 .label{
     font-size: var(--font-size-md);
@@ -101,6 +100,10 @@ html,body{
     font-weight: 600;
 }
 
+#description-trial{
+    font-family: "MainFont";
+}
+
 /* button styling */
 
 .btn{
@@ -131,6 +134,12 @@ html,body{
     border: 0.5px solid var(--font-color-secondary);
 }
 
+button:hover{
+    transition: background-color 0.5s ease;
+    background-color: #302f32;
+    color: rgb(145, 197, 154);
+}
+
 
 /* img styling */
 
@@ -141,7 +150,22 @@ html,body{
     border-radius: 10px;
 }
 
-/* fade divs */
+/* nav buttons */
+
+.nav-title{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-title:hover{
+    font-weight: 900;
+    cursor: pointer;
+    color: rgb(145, 197, 154);
+}
+
+/* fade div */
 
 .fade-div{
     position: absolute;
@@ -154,6 +178,8 @@ html,body{
 }
 
 
+
+/* containers */
 
 
 .img-background-div{
@@ -191,14 +217,4 @@ html,body{
     flex-wrap: wrap;
     display: flex;
 
-}
-#description-trial{
-    font-family: "MainFont";
-}
-
-
-button:hover{
-    transition: background-color 0.5s ease;
-    background-color: #302f32;
-    color: var(--secondary-color);
 }

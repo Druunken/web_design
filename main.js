@@ -12,7 +12,6 @@ const server = http.createServer((req,res) => {
 
     if(req.url === "/sign-in"){
         filePath = path.join(publicDir,"sign-in","sign-in.html")
-        console.log("hit")
     }else if(req.url === "/login"){
         filePath = path.join(publicDir,"login","login.html")
     }

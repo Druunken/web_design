@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "MainFont";
+    src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.label{
+    font-family: "MainFont";
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.btn{
+    width: 300px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+}

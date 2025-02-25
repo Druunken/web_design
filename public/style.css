@@ -153,6 +153,11 @@ button:hover{
 
 /* nav buttons */
 
+#main-title{
+    cursor: pointer;
+    
+}
+
 .nav-title{
     width: 150px;
     display: flex;
@@ -168,6 +173,7 @@ button:hover{
 }
 
 .nav-title:hover{
+    transition: font-weight 0.3s ease;
     font-weight: 900;
     cursor: pointer;
     color: rgb(145, 197, 154);
@@ -202,6 +208,20 @@ button:hover{
 }
 #modal.active{
     z-index: 1;
+}
+
+#contentModal{
+    animation: 0.3s ease fromZeroToHero;
+}
+
+
+.modal-content-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
 }
 
 .img-background-div{
@@ -247,4 +267,14 @@ button:hover{
     flex-wrap: wrap;
     display: flex;
 
+}
+
+@keyframes fromZeroToHero {
+    0%{
+        opacity: 0;
+    }
+    100%{
+
+        opacity: 1;
+    }
 }

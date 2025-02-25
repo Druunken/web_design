@@ -1,1 +1,1 @@
-read me
+terminal >> node main.js

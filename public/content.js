@@ -13,20 +13,17 @@ export const whyPomContent = `
     `
 export const platformContent = `
         <div id="contentModal">
-            <p class="label-header">Platform.</p>
+            <p class="label-header">Platform</p>
             <div class="modal-content-div">
-                <p class="nav-label">
-                    IOS
-                </p>
-                <p class="nav-label">
-                    Android
-                </p>
+                    <img class="icon-plattform" src="./icons/iosStoreLink.svg"/>
+                    <p class="nav-label">-or-</p>
+                    <img class="icon-plattform" src="./icons/googleStoreLink.svg"/>
             </div>
         </div>
     `
 export const currencyContent = `
         <div id="contentModal">
-            <p class="label-header">Currencies.</p>
+            <p class="label-header">Currencies</p>
             <div class="modal-content-div">
                 <p class="nav-label">
                     US-Dollar
@@ -48,6 +45,9 @@ export const changelogContent = `
     <div id="contentModal">
         <p class="label-header">Changelog.</p>
         <div class="modal-content-div">
+                <p class="nav-label">
+                    not out yet
+                </p>
                 <p class="nav-label">
                     Version 0.1.0.0
                 </p>

@@ -17,6 +17,17 @@ const rmAcitve = () => {
     })
 }
 
+const resetToStart = () => {
+    rmAcitve()
+    titleDiv.style.display = "flex"
+    trialDiv.style.display = "flex"
+
+    const childElement = document.getElementById("contentModal")
+    if(childElement) contentModal.removeChild(childElement)
+    
+    if(contentModal.classList.contains("active")) contentModal.classList.remove("active")
+}
+
 
 const showContent = (content,msg,ev) => {
     rmAcitve()
@@ -39,20 +50,14 @@ document.addEventListener("click",(ev) => {
     }else if(ev.target.innerText === "Platform"){
         showContent(platformContent,"Platform",ev)
 
-    }else if(ev.target.innerText === "Solutions"){
-        showContent(currencyContent,"Solutions",ev)
+    }else if(ev.target.innerText === "Currencies"){
+        showContent(currencyContent,"Currencies",ev)
         
     }else if(ev.target.innerText === "Changelog"){
         showContent(changelogContent,"Changelog",ev)
 
     }else if(ev.target.id.includes("main-title")){
-        rmAcitve()
-
-        titleDiv.style.display = "flex"
-        trialDiv.style.display = "flex"
-
-        const childElement = document.getElementById("contentModal")
-        if(childElement) contentModal.removeChild(childElement)
+        resetToStart()
 
     }
 })

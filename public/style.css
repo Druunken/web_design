@@ -58,12 +58,10 @@ html,body{
     margin-top: 30px;
     position: relative;
 }
-
+/* 
 #footer{
-
-    /* no footer yet */
 }
-
+ */
 
 /* font styling */
 
@@ -192,6 +190,12 @@ button:hover{
 }
 
 /* containers */
+
+.icon-plattform{
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
 
 
 #modal{

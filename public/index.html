@@ -61,24 +61,38 @@
 
             <div id="content-sec">
                 <div id="product-div">
-                    <p class="label-header product-label">we do not save sensitive data. The email is only used for sending emails </p>
+                    <p class="label-header product-label">we do not save sensitive data.</p>
+                    <p class="label-header product-label" style="color: #eceeff;">The email is only used for sending emails</p>
                 </div>
                 <div id="form">
+
+                    <div id="submit-form">
+                        <p class="nav-label" style="color: white;">loading...</p>
+                    </div>
+                
                     <div class="basic-div-v">
                         <img class="icons" src="./icons/exclamation-icon.svg" alt="exclamation">
-                        <p class="nav-label">Fill up the form and get notified by full-release</p>
+                        <p class="nav-label">Fill up the form and get notified by full-release.</p>
                     </div>
-                    <div class="form-div" id="username-div">
-                        <img class="form-icon" src="./icons/user-icon.svg">
-                        <input placeholder="Username" class="input-form" type="text" id="username-form">
+                    <div>
+                        <div class="form-div" id="username-div">
+                            <img class="form-icon" src="./icons/user-icon.svg">
+                            <input placeholder="Username" class="input-form" type="text" id="username-form">
+                        </div>
+                        <p class="nav-label pw-p" style="text-align: center; font-size: 10px; color: rgb(255, 77, 65);">invalid username</p>
                     </div>
-                    <div class="form-div" id="email-div">
-                        <img class="form-icon" src="./icons/email-icon.svg">
-                        <input placeholder="Email" class="input-form" type="email" name="email" id="email-form">
+
+                    <div>
+                        <div class="form-div" id="email-div">
+                            <img class="form-icon" src="./icons/email-icon.svg">
+                            <input placeholder="Email" class="input-form" type="email" name="email" id="email-form">
+                        </div>
+                        <p class="nav-label email-p" style="text-align: center; font-size: 10px; color: rgb(255, 77, 65);">invalid email</p>
                     </div>
                     <button id="form-button-confirm" class="btn" style="width: 200px; border-width: 2px;">Get notified</button>
                 </div>
                 <div class="fade-div-upside-down"></div>
+                <div class="fade-div"></div>
             </div>
 
         </div>

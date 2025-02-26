@@ -12,6 +12,9 @@ const scrollUpDiv = document.getElementById("scroll-up-div")
 const submitBtn = document.getElementById("form-button-confirm")
 const emailForm = document.getElementById("email-form")
 const usernameForm = document.getElementById("username-form")
+const usernamePara = document.querySelector(".pw-p")
+const emailPara = document.querySelector(".email-p")
+const formDiv = document.getElementById("form")
 
 const state = "first-state"
 
@@ -111,9 +114,59 @@ scrollUpDiv.addEventListener("click",() => {
     scrollUpDiv.classList.remove("active")
 })
 
-submitBtn.addEventListener("click",() => {
+submitBtn.addEventListener("click",(ev) => {
+    const usernameInvalid = document.getElementById("username-div")
+    const emailInvalid = document.getElementById("email-div")
+    const loadingDiv = document.getElementById("submit-form")
+
+    if(usernameForm.value === "" || (emailForm.value === "" || !emailForm.value.includes("@"))){
+        if(usernameForm.value === ""){
+            usernameInvalid.classList.add("active")
+            usernamePara.classList.add("active")
+        }
+        if(emailForm.value === "" || !emailForm.value.includes("@")){
+            emailInvalid.classList.add("active")
+            emailPara.classList.add("active")
+        }
+    }else{
+        usernameInvalid.classList.remove("active")
+        emailInvalid.classList.remove("active")
+        usernamePara.classList.remove("active")
+        emailPara.classList.remove("active")
+        /* add an ui over the form  */
+        loadingDiv.classList.add("active")
+        setTimeout(() => {
+            loadingDiv.classList.remove("active")
+            const acceptedContent = `
+                <div class="basic-div-v">
+                    <p class="nav-label">Accpeted!</p>
+                    <p class="nav-label">We will send an email to ${emailForm.value}</p>
+                    <p class="nav-label">See you ${usernameForm.value}!</p>
+                </div>
+            `
+            formDiv.innerHTML = ""
+            formDiv.insertAdjacentHTML("afterbegin",acceptedContent)
+        }, 3500);
+        console.log("valid")
+    }
     console.log(usernameForm.value)
     console.log(emailForm.value)
+})
+
+usernameForm.addEventListener("keypress",() => {
+    const usernameDiv = document.getElementById("username-div")
+    if(usernameDiv.classList.contains("active")){
+        usernameDiv.classList.remove("active")
+        usernamePara.classList.remove("active")
+    }
+})
+
+emailForm.addEventListener("keypress",() => {
+    const emailDiv = document.getElementById("email-div")
+    if(emailDiv.classList.contains("active")){
+        emailDiv.classList.remove("active")
+        emailPara.remove("active")
+    }
 })
 
 

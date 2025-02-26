@@ -15,6 +15,8 @@ const state = "first-state"
 const SCREEN_WIDTH = window.screen.availWidth
 const SCREEN_HEIGHT = window.innerHeight
 
+const scrollYTolerance = SCREEN_HEIGHT - 50
+
 /* create space */
 const contentSecTop = contentSec.getBoundingClientRect().top
 const leftOverScreen = SCREEN_HEIGHT - contentSecTop
@@ -77,25 +79,28 @@ window.document.addEventListener("click",(ev) => {
             top: SCREEN_HEIGHT,
             behavior: "smooth"
         })
-        setTimeout(() => {
-            scrollUpDiv.classList.add("active")
-        }, 2500);
     }else if(ev.target.id.includes("main-title")){
         resetToStart()
     }
 })
 
 window.addEventListener("scroll",() => {
-    if(window.scrollY)
-    if(window.scrollY > 150){
+    if(!scrollUpDiv.classList.contains("active")){
         setTimeout(() => {
-            scrollUpDiv.classList.add("active")
+            if(window.scrollY > scrollYTolerance){
+                scrollUpDiv.classList.add("active")
+            }
         }, 1500);
+    }
+
+    if(window.scrollY < 300){
+        scrollUpDiv.classList.remove("active")
     }
 })
 
 
 scrollUpDiv.addEventListener("click",() => {
+
     window.scrollTo({
         top:0,
         behavior:"smooth"

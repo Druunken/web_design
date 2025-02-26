@@ -128,9 +128,17 @@ html,body{
     font-family: "MainFont";
     font-weight: 600;
 }
+.content-label{
+    font-size: 30px;
+    font-weight: 650;
+}
 
 #description-trial{
     font-family: "MainFont";
+}
+
+.product-label{
+    color: var(--font-color-exclamation);
 }
 
 /* button styling */
@@ -221,6 +229,15 @@ button:hover{
     left: 0;
     z-index: -1;
 }
+.fade-div-upside-down{
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
 
 /* containers */
 
@@ -248,14 +265,19 @@ button:hover{
     border-radius: 10px;
     z-index: -100;
     justify-content: center;
-    align-items: center;
+    align-items: space-between;
     display: flex;
+    margin-top: 50px;
 }
 #modal.active{
     z-index: 1;
 }
 
 #contentModal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     animation: 0.3s ease fromZeroToHero;
 }
 
@@ -312,9 +334,10 @@ button:hover{
     justify-content: space-evenly;
     align-items: center;
     padding: 0px 50px;
+    position: relative;
 }
 #product-div{
-    width: 350px;
+    width: 450px;
 }
 #description-trial-div{
     flex-wrap: wrap;
@@ -338,7 +361,7 @@ button:hover{
     z-index: -1;
 }
 #scroll-up-div.active{
-    z-index: 1;
+    z-index: 100;
     animation: fromZeroToHero 0.6s forwards;
 }
 #scroll-up-div:hover{

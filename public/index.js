@@ -9,6 +9,9 @@ const titleDiv = document.querySelector(".title-div")
 const trialDiv = document.querySelector(".trial-div")
 const contentSec = document.getElementById("content-sec")
 const scrollUpDiv = document.getElementById("scroll-up-div")
+const submitBtn = document.getElementById("form-button-confirm")
+const emailForm = document.getElementById("email-form")
+const usernameForm = document.getElementById("username-form")
 
 const state = "first-state"
 
@@ -106,6 +109,11 @@ scrollUpDiv.addEventListener("click",() => {
         behavior:"smooth"
     })
     scrollUpDiv.classList.remove("active")
+})
+
+submitBtn.addEventListener("click",() => {
+    console.log(usernameForm.value)
+    console.log(emailForm.value)
 })
 
 

@@ -65,6 +65,26 @@ html,body{
 
 /* font styling */
 
+.nav-circle{
+    width: 15px;
+    height: 15px;
+    background-color: var(--font-color-active);
+    border-radius: 3px;
+    opacity: 0;
+}
+.nav-circle.active{
+    transition: opacity 1s ease;
+    animation: slideIn 0.2s ease;
+    opacity: 1;
+}
+
+.nav-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
 
 .label{
     font-size: var(--font-size-md);
@@ -166,8 +186,6 @@ button:hover{
 .nav-title.active{
     font-weight: 900;
     color: rgb(145, 197, 154);
-    border-bottom: 3px solid var(--font-color-active);
-    border-radius: 3px;
 }
 
 .nav-title:hover{
@@ -280,5 +298,14 @@ button:hover{
     100%{
 
         opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0%{
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(0px);
     }
 }

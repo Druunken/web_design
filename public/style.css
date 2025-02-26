@@ -4,10 +4,13 @@
     --font-color-primary: #302f32;
     --font-color-secondary: #666666;
     --font-color-active:rgb(145, 197, 154);
+    --font-color-exclamation:#727597;
+    --font-color-exclamationLight: #eceeff;
     --font-size-reg: 15px;
     --font-size-md: 22px;
     --font-size-sm: 10px;
     --font-size-xxl: 40px;
+
 }
 
 @font-face {
@@ -84,6 +87,13 @@ html,body{
     align-items: center;
     flex-direction: column;
     gap: 5px;
+}
+
+.form-label{
+    font-size: 18px;
+    font-family: "MainFont";
+    font-weight: 750;
+    text-align: center;
 }
 
 .label{
@@ -176,6 +186,11 @@ button:hover{
     
 }
 
+.icons {
+    width: 25px;
+    height: 25px;
+}
+
 .nav-title{
     width: 150px;
     display: flex;
@@ -208,6 +223,14 @@ button:hover{
 }
 
 /* containers */
+
+.basic-div-v{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
 
 .icon-plattform{
     width: 150px;
@@ -280,15 +303,87 @@ button:hover{
     align-items: center;
     position: relative;
 }
-.content-sec{
+#content-sec{
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--font-color-active);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 50px;
+}
+#product-div{
+    width: 350px;
 }
 #description-trial-div{
     flex-wrap: wrap;
     display: flex;
 
+}
+#scroll-up-div{
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    right: 50%;
+    background-color: var(--font-color-exclamation);
+    width: 150px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    z-index: -1;
+}
+#scroll-up-div.active{
+    z-index: 1;
+    animation: fromZeroToHero 0.6s forwards;
+}
+#scroll-up-div:hover{
+    transition: background-color 0.3s ease;
+    background-color: var(--font-color-exclamationLight);
+    cursor: pointer;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+}
+.input-form{
+    border: none;
+    font-size: 15px;
+    font-family: "MainFont";
+    font-weight: 900;
+}
+.input-form::placeholder{
+    font-weight: 750;
+    font-family: "MainFont";
+}
+.input-form:focus{
+    border: none;
+    outline: none;
+}
+.form-div{
+    background-color: var(--primary-color);
+    width: 300px;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    padding: 0px 30px;
+    gap: 15px;
+
+}
+.form-icon{
+    width: 15px;
+    height: 15px;
 }
 
 @keyframes fromZeroToHero {

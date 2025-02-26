@@ -7,6 +7,19 @@ import { whyPomContent,
 const contentModal = document.getElementById("modal")
 const titleDiv = document.querySelector(".title-div")
 const trialDiv = document.querySelector(".trial-div")
+const contentSec = document.getElementById("content-sec")
+const scrollUpDiv = document.getElementById("scroll-up-div")
+
+const state = "first-state"
+
+const SCREEN_WIDTH = window.screen.availWidth
+const SCREEN_HEIGHT = window.innerHeight
+
+/* create space */
+const contentSecTop = contentSec.getBoundingClientRect().top
+const leftOverScreen = SCREEN_HEIGHT - contentSecTop
+contentSec.style.height = `${SCREEN_HEIGHT - 50}px`
+contentSec.style.marginTop = `${leftOverScreen}px`
 
 
 
@@ -19,7 +32,6 @@ const rmAcitve = () => {
         getCircles[i].classList.remove("active")
     }
 }
-
 const resetToStart = () => {
     rmAcitve()
     titleDiv.style.display = "flex"
@@ -44,7 +56,6 @@ const showContent = (content,msg,ev) => {
     contentModal.classList.add("active")
 
     contentModal.insertAdjacentHTML("beforeend",content)
-
     console.log(msg)
 }
 
@@ -61,8 +72,35 @@ window.document.addEventListener("click",(ev) => {
     }else if(ev.target.innerText === "Changelog"){
         showContent(changelogContent,"Changelog",ev)
 
+    }else if(ev.target.innerText === "Start for free now"){
+        window.scrollTo({
+            top: SCREEN_HEIGHT,
+            behavior: "smooth"
+        })
+        setTimeout(() => {
+            scrollUpDiv.classList.add("active")
+        }, 2500);
     }else if(ev.target.id.includes("main-title")){
         resetToStart()
-
     }
 })
+
+window.addEventListener("scroll",() => {
+    if(window.scrollY)
+    if(window.scrollY > 150){
+        setTimeout(() => {
+            scrollUpDiv.classList.add("active")
+        }, 1500);
+    }
+})
+
+
+scrollUpDiv.addEventListener("click",() => {
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    })
+    scrollUpDiv.classList.remove("active")
+})
+
+
